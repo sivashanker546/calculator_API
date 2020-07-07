@@ -1,6 +1,9 @@
 <h1 align="center">Calculator API</h1>
 <p  align="center"> <b>Hostname</b> : http://calculatorapi546.atwebpages.com </p>
 
+<p  align="center"> <b>Database used </b> : https://github.com/sivashanker546/calculator_API/blob/master/calculater_api.sql </p>
+
+
 ## Rest API
 
 ### Addition
