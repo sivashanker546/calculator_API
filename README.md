@@ -1,79 +1,111 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<h1 align="center">Calculator API</h1>
+<p  align="center"> <b>Hostname</b> : http://calculatorapi546.atwebpages.com </p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Rest API
 
-## About Laravel
+### Addition
+url : http://calculatorapi546.atwebpages.com/public/api/add
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Method: `POST`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Endpoint: `/add`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Body: 
+```json
+ {"num1":  20, "num2": 30}
+```
 
-## Learning Laravel
+### Subtraction
+url :  : http://calculatorapi546.atwebpages.com/public/api/subtract
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Method: `POST`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Endpoint: `/subtract`
 
-## Laravel Sponsors
+Body: 
+```json
+ {"num1":  10, "num2": 4}
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Multiplication 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+url : http://calculatorapi546.atwebpages.com/public/api/multiply
 
-## Contributing
+Method: `POST`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Endpoint: `/subtract`
 
-## Code of Conduct
+Body: 
+```json
+ {"num1":  10, "num2": 4}
+```
+### Division
+url : http://calculatorapi546.atwebpages.com/public/api/divide
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Method: `POST`
 
-## Security Vulnerabilities
+Endpoint: `/divide`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Body: 
+```json
+ {"num1":  10, "num2": 4}
+```
+### Square Root
+url : http://calculatorapi546.atwebpages.com/public/api/squareRoot
 
-## License
+Method: `POST`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Endpoint: `/squareRoot`
+
+Body: 
+```json
+ {"num1": 90}
+```
+### Save Value
+url : http://calculatorapi546.atwebpages.com/public/api/save
+
+Method: `POST`
+
+Endpoint: `/save`
+
+Body: 
+```json
+ {"value": 40}
+```
+
+### Retrieve Value
+url : http://calculatorapi546.atwebpages.com/public/api/savedValue
+
+Method: `GET`
+
+Endpoint: `/savedValue`
+
+### Clear Value
+url : http://calculatorapi546.atwebpages.com/public/api/clear
+
+Method: `POST`
+
+Endpoint: `/clear`
+
+## Test Cases
+
+Package used : "phpunit/phpunit": "^8.5"
+
+command used to case test case file : php artisan make:test CalculatorApiTest
+
+Code path of test cases : \calculator_API\tests\Feature\CalculatorApiTest.php
+
+command to execute the test cases : .\vendor\bin\phpunit.bat (once we run this command, all the tests will be executed automatically)
+
+- <b>test_can_create_value  </b> : This method will execute /save endpoint passing value = 20 and checks response status 200  
+
+- <b>test_can_add_task  </b> : This method will execute /add endpoint passing num1=20, num2 = 20 and checks response status 200  
+
+- <b>test_can_subtract_task  </b> : This method will execute /subtract endpoint passing num1 = 20, num2 = 20 and checks response status 200  
+
+- <b>test_can_multiply_task  </b> : This method will execute /multiply endpoint passing num1 = 20, num2 = 20 and checks response status 200  
+
+- <b>test_can_divide_task </b> : This method will execute /divide endpoint passing num1 = 20, num2 = 20 and checks response status 200  
+
+- <b>test_can_divide_task </b> : This method will execute /divide endpoint passing num1 = 61 and checks response status 200  
+
