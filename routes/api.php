@@ -21,4 +21,4 @@ $router->post('/add','ValueController@add')->name('addvalues');
 $router->post('/subtract','ValueController@subtract')->name('subtractvalues');
 $router->post('/multiply','ValueController@multiply')->name('multiplyvalues');;
 $router->post('/divide','ValueController@divide')->name('dividevalues');
-$router->post('/square_root','ValueController@square_root')->name('squareroot');
+$router->post('/squareRoot','ValueController@squareRoot')->name('squareroot');

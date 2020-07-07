@@ -106,7 +106,7 @@ class ValueController extends Controller
      * FIND SQUARE ROOT OF A VALUE
      * @return Illuminate\Http\Response
      */
-    public function square_root(Request $request)
+    public function squareRoot(Request $request)
     {
         $rules = [
             'num1'=>'required|numeric'
