@@ -109,6 +109,8 @@ command to execute the test cases : .\vendor\bin\phpunit.bat (once we run this c
 
 - <b>test_can_divide_task </b> : This method will execute /divide endpoint passing num1 = 61 and checks response status 200  
 
-screenshot for successfully executed testcases : https://raw.githubusercontent.com/sivashanker546/calculator_API/master/public/success_testcase.PNG
+screenshot for successfully executed testcases :https://raw.githubusercontent.com/sivashanker546/calculator_API/master/public/success_testcase.PNG
 
-screenshot for failure of test cases : https://raw.githubusercontent.com/sivashanker546/calculator_API/master/public/failure_testcase.PNG
+screenshot for failure of test cases  https://raw.githubusercontent.com/sivashanker546/calculator_API/master/public/failure_testcase.PNG 
+
+<b> note </b> : Since i have hosted in some free hosting server i have limited access to give access to testcases, so sending the screenshtos as above 
