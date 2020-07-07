@@ -113,4 +113,15 @@ screenshot for successfully executed testcases :https://raw.githubusercontent.co
 
 screenshot for failure of test cases  https://raw.githubusercontent.com/sivashanker546/calculator_API/master/public/failure_testcase.PNG 
 
+Inorder to execute the testcases in local, we need to follow below steps 
+- git clone https://github.com/sivashanker546/calculator_API.git
+
+- composer update 
+
+- php artisan session:table 
+
+- command to execute the test cases : .\vendor\bin\phpunit.bat
+
 <b> note </b> : Since i have hosted in some free hosting server i have limited access to give access to testcases, so sending the screenshtos as above 
+
+
