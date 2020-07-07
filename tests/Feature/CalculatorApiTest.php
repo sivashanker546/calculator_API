@@ -16,40 +16,10 @@ class CalculatorApiTest extends TestCase
     {
         $formData = ['value' => 20];
         $this->json('POST',route('storevalue'),$formData)
-             ->assertStatus(201)
-             ->assertJson(['data'=>$formData]);
+             ->assertStatus(200)
+             ->assertJson(['save'=>true]);
     }
-    /**
-     * TESTING THE SHOW VALUE
-     */
-    public function test_can_show_value()
-    {
-        $value= factory(\App\Value::class)->create();
-        $this->get(route('showvalue', $value->id))->assertStatus(200);
-    }
-    /**
-     * TESTING THE UPDATE VALUE
-     */
-    public function test_can_update_task()
-    {
-        //$value = factory(\App\Value::class)->make();
-        $value= factory(\App\Value::class)->create();
-        $updatedData = [
-            'value' => 45
-        ];
-        $this->json('PUT', route('updatevalue', $value->id), $updatedData)
-            ->assertStatus(200)
-            ->assertJson(['data' => $updatedData]);
-    }
-    /**
-     * TESTING THE DELETE VALUE
-     */
-    public function test_can_delete_task()
-    {
-        //$value= factory(\App\Value::class)->make();
-        $value= factory(\App\Value::class)->create();
-        $this->delete(route('destroyvalue', $value->id))->assertStatus(200);
-    }
+    
     /**
      * TESTING THE ADD VALUE
      */

@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
-use App\Traits\ApiResponser, Illuminate\Http\Request, Illuminate\Http\Response, App\Value;
+use App\Traits\ApiResponser, 
+    Illuminate\Http\Request, 
+    Illuminate\Http\Response, App\Value;
 class ValueController extends Controller
 {
     use ApiResponser;
@@ -11,69 +13,38 @@ class ValueController extends Controller
      */
     public function __construct()
     {
-       
     }
     /**
-     * RETURN LIST OF VALUES
+     * SAVE A VALUE
      * @return Illuminate\Http\Response
      */
-    public function index()
-    {
-        $values=Value::all();
-        return $this->successResponse($values); 
-    }
-    /**
-     * CREATE A VALUE
-     * @return Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function save(Request $request)
     {
         $rules = [
             'value'=>'required|numeric'
         ];
-        $this->validate($request, $rules);
-        $value = Value::create($request->all());
-        return $this->successResponse($value, Response::HTTP_CREATED); 
-    }
-    /**
-     * OBTAIN AND SHOW A VALUE
-     * @return Illuminate\Http\Response
-     */
-    public function show($value,Request $request)
-    { 
-        $value=Value::findOrFail($value);
-        return $this->successResponse($value); 
-    }
-    /**
-     * UPDATE AN EXISTING VALUE
-     * @return Illuminate\Http\Response
-     */
-    public function update($value,Request $request)
-    {
-       $rules = [
-            'value'=>'numeric'
-        ];
+        $values=$request->all();
         $this->validate($request, $rules); 
-        $value=Value::findOrFail($value);
-        
-        $value->fill($request->all());
-        
-        if($value->isClean())
-        {
-            return $this->errorResponse("Atleast one value must change",Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-        $value->save();
-        return $this->successResponse($value); 
+        $request->session()->put('value', $values['value']);
+        return response()->json(['save'=>true]); 
     }
     /**
-     * REMOVE AN EXISTING VALUE
+     * FETCH SAVED VALUE
      * @return Illuminate\Http\Response
      */
-    public function destroy($value)
+    public function savedValue(Request $request)
     {
-        $value=Value::findOrFail($value);
-        $value->delete();
-        return $this->successResponse($value); 
+        $value = $request->session()->get('value');
+        return response()->json(['value'=>@$value]);
+    }
+    /**
+     * FETCH SAVED VALUE
+     * @return Illuminate\Http\Response
+     */
+    public function clear(Request $request)
+    {
+        $value = $request->session()->forget('value');
+        return response()->json(['value'=>@$value]);
     }
     /**
      * ADD TWO VALUES
@@ -87,7 +58,7 @@ class ValueController extends Controller
         $values=$request->all();
         $this->validate($request, $rules); 
         $value=$values['num1']+$values['num2'];
-        return $this->successResponse($value); 
+        return response()->json(['answer'=>$value]); 
     }
     /**
      * SUBTRACT TWO VALUES
@@ -101,7 +72,7 @@ class ValueController extends Controller
         $values=$request->all();
         $this->validate($request, $rules); 
         $value=$values['num1']-$values['num2'];
-        return $this->successResponse($value); 
+        return response()->json(['answer'=>$value]); 
     }
     /**
      * MULTIPLY TWO VALUES
@@ -115,7 +86,7 @@ class ValueController extends Controller
         $values=$request->all();
         $this->validate($request, $rules); 
         $value=$values['num1']*$values['num2'];
-        return $this->successResponse($value); 
+        return response()->json(['answer'=>$value]); 
     }
     /**
      * DIVIDE TWO VALUES
@@ -129,7 +100,7 @@ class ValueController extends Controller
         $values=$request->all();
         $this->validate($request, $rules); 
         $value=$values['num1']/$values['num2'];
-        return $this->successResponse($value); 
+        return response()->json(['answer'=>$value]); 
     }
     /**
      * FIND SQUARE ROOT OF A VALUE
@@ -142,7 +113,7 @@ class ValueController extends Controller
         ];
         $values=$request->all();
         $this->validate($request, $rules); 
-        $value=sqrt($values['num1']);
-        return $this->successResponse($value); 
+        $value=number_format(sqrt($values['num1']),4);
+        return response()->json(['answer'=>$value]); 
     }
 }

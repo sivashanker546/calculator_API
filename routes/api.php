@@ -14,19 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-
-$router->get('/values','ValueController@index');
-$router->post('/values','ValueController@store')->name('storevalue');
-$router->get('/values/{value}','ValueController@show')->name('showvalue');
-$router->put('/values/{value}','ValueController@update')->name('updatevalue');
-$router->patch('/values/{value}','ValueController@update');
-$router->delete('/values/{value}','ValueController@destroy')->name('destroyvalue');
+$router->post('/save','ValueController@save')->name('storevalue');
+$router->get('/savedValue','ValueController@savedValue')->name('showvalue');
+$router->get('/clear','ValueController@clear')->name('clearvalue');
 $router->post('/add','ValueController@add')->name('addvalues');
 $router->post('/subtract','ValueController@subtract')->name('subtractvalues');
 $router->post('/multiply','ValueController@multiply')->name('multiplyvalues');;
 $router->post('/divide','ValueController@divide')->name('dividevalues');
-$router->post('/square_root','ValueController@square_root')->name('squareroot');;
+$router->post('/square_root','ValueController@square_root')->name('squareroot');

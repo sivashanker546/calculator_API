@@ -14,4 +14,5 @@ class Value extends Model
     protected $fillable = [
         'value'
     ];
+    
 }
