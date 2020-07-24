@@ -108,7 +108,7 @@ command to execute the test cases : .\vendor\bin\phpunit.bat (once we run this c
 
 - <b>test_can_divide_task </b> : This method will execute /divide endpoint passing num1 = 20, num2 = 20 and checks response status 200  
 
-- <b>test_can_divide_task </b> : This method will execute /divide endpoint passing num1 = 61 and checks response status 200  
+- <b>test_can_squareroot_task </b> : This method will execute /squareRoot endpoint passing num1 = 61 and checks response status 200  
 
 screenshot for successfully executed testcases :https://raw.githubusercontent.com/sivashanker546/calculator_API/master/public/success_testcase.PNG
 
